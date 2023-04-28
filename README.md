@@ -11,3 +11,12 @@ A motivação para o desenvolvimento deste sistema é a aplicação do conhecime
 
 * Python
 * Django
+
+
+# Funcionalidades
+
+#### Controle de Estoque
+
+* Armazenamento
+* Histórico de movimentações
+* Status da ocupação
