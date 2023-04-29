@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from projeto.Apps.Estoque.models import Posicao
+
+admin.site.register(Posicao)
