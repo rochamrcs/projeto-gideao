@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class Posicao(models.Model):
+    posicao = models.CharField(max_length=30, default="")
+    capacidade = models.IntegerField()
+
+    def __str__(self):
+        return self.posicao
