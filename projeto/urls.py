@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from projeto.Apps.Estoque import views as estoque_views
+from projeto.Apps.core import views as estoque_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('projeto.Apps.Estoque.urls'))
+    path('', include('projeto.Apps.core.urls'))
 ]
