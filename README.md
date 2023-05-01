@@ -11,6 +11,7 @@ A motivação para o desenvolvimento deste sistema é a aplicação do conhecime
 
 * Python
 * Django
+* Bootstrap v5.3
 
 
 # Funcionalidades
