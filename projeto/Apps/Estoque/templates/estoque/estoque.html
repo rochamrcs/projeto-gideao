@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Posições</h3>
+
+
+        {% if objetos_lista %}
+        <div class="container">
+            <table class="table">
+                <thead class="table-dark">
+                    <th class="text-center">Posição</th>
+                    <th class="text-center">Capacidade</th>
+                    <th class="text-center">Ocupação(%)</th>
+                </thead>
+                {% for objetos in objetos_lista%}
+                <tbody>
+                    <th class="text-center"> {{objetos.posicao}} </th>
+                    <th class="text-center"> {{objetos.capacidade}}</th>
+                    <th class="text-center"> {{objetos.ocupacao}}</th>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <div class="container">
+            <p class="alert alert-warning">Sem posições cadastradas. Deseja <a href="#">cadastrar</a>?</p>
+        </div>
+        {% endif %}
+        
+
+{% endblock content %}
