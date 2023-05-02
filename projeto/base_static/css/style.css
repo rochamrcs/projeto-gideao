@@ -1,0 +1,11 @@
+body {
+    overflow-x: hidden;
+}
+
+.content {
+    margin-bottom: 80px;
+}
+
+.brand {
+    color: rgb(236, 174, 4);
+}
