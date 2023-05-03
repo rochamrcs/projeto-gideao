@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %} Nova Posição {% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Posições - Detalhe <button type="reset" class="btn btn-secondary ms-3"><a href="{% url 'estoque'%}" class="text-decoration-none text-reset" > Retornar </a></button></h3>
+
+
+<div class="container mx-auto bg-body-secondary pt-3 pb-3 rounded text-center">
+    
+    <span class="fw-bold">Detalhes da posição: {{object.posicao}}</span><br>
+    <br>
+    <a>Capacidade: {{object.capacidade}} Paletes | </a>
+    <a>Ocupação: {{object.ocupacao}}%</a>
+ 
+</div>
+
+{% endblock content %}

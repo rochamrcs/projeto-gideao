@@ -9,3 +9,7 @@ body {
 .brand {
     color: rgb(236, 174, 4);
 }
+
+.asteriskField {
+    color: red;
+}

@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Posicao(models.Model):
-    posicao = models.CharField(max_length=30, default="")
+    posicao = models.CharField(max_length=30, default="", unique=True, error_messages={
+        'unique': 'Essa posição já possui cadastro'
+    })
     capacidade = models.IntegerField()
     ocupacao = models.IntegerField(default=0)
 

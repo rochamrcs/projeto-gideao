@@ -1,32 +1,41 @@
 {% extends 'base.html'%}
 
+{% block title %} Posições {% endblock title %}
+
 {% block content %}
 
-<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Posições</h3>
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Posições - Visão geral</h3>
 
+<div class="container pb-2">
 
-        {% if objetos_lista %}
-        <div class="container">
-            <table class="table">
-                <thead class="table-dark">
-                    <th class="text-center">Posição</th>
-                    <th class="text-center">Capacidade</th>
-                    <th class="text-center">Ocupação(%)</th>
-                </thead>
-                {% for objetos in objetos_lista%}
-                <tbody>
-                    <th class="text-center"> {{objetos.posicao}} </th>
-                    <th class="text-center"> {{objetos.capacidade}}</th>
-                    <th class="text-center"> {{objetos.ocupacao}}</th>
-                </tbody>
-                {% endfor %}
-            </table>
-        </div>
-        {% else %}
-        <div class="container">
-            <p class="alert alert-warning">Sem posições cadastradas. Deseja <a href="#">cadastrar</a>?</p>
-        </div>
-        {% endif %}
-        
+    <button type="button" class="btn btn-success ps-4 pe-4"><a href="{% url 'nova_posicao'%}" class="text-decoration-none text-reset" >Cadastrar posição</a></button>
+
+</div>
+  
+{% if objetos_lista %}
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+            <th class="text-center">Posição</th>
+            <th class="text-center">Capacidade</th>
+            <th class="text-center">Ocupação(%)</th>
+            <th class="text-center">Detalhes</th>
+        </thead>
+        {% for objetos in objetos_lista%}
+        <tbody>
+            <th class="text-center"> {{objetos.posicao}} </th>
+            <th class="text-center"> {{objetos.capacidade}}</th>
+            <th class="text-center"> {{objetos.ocupacao}}</th>
+            <th class="text-center fw-light"> <a href="{% url 'detalhe' pk=objetos.id%}">Visualizar</a></th>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<div class="container">
+    <p class="alert alert-warning">Sem posições cadastradas. Deseja <a href="#">cadastrar</a>?</p>
+</div>
+{% endif %}
+
 
 {% endblock content %}
