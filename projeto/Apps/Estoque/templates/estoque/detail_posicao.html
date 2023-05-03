@@ -12,11 +12,36 @@
 
 <div class="container mx-auto bg-body-secondary pt-3 pb-3 rounded text-center">
     
-    <span class="fw-bold">Detalhes da posição: {{object.posicao}}</span><br>
+    <span class="fw-bold">Detalhes da posição: {{objetos_pos.posicao}}</span><br>
     <br>
-    <a>Capacidade: {{object.capacidade}} Paletes | </a>
-    <a>Ocupação: {{object.ocupacao}}%</a>
+    <a>Capacidade: {{objetos_pos.capacidade}} Paletes | </a>
+    <a>Ocupação: {{objetos_pos.ocupacao}}%</a>
  
 </div>
+
+{% if objetos_arm %}
+<div class="container table-responsive mt-4">
+    <table class="table">
+        <thead class="table-dark">
+            <th class="text-center">PID</th>
+            <th class="text-center">Posição</th>
+            <th class="text-center">Produto</th>
+            <th class="text-center">Modal</th>
+        </thead>
+        {% for armazem in objetos_arm%}
+        <tbody>
+            <th class="text-center"> {{armazem.PID}} </th>
+            <th class="text-center"> {{armazem.posicao}}</th>
+            <th class="text-center"> {{armazem.produto}}</th>
+            <th class="text-center"> {{armazem.modal}}</th>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<div class="container">
+    <p class="alert alert-success mt-2">Sem material armazenado.</p>
+</div>
+{% endif %}
 
 {% endblock content %}
