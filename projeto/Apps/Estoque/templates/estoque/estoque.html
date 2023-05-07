@@ -20,15 +20,22 @@
             <th class="text-center">Capacidade</th>
             <th class="text-center">Qntd. Armazenada</th>
             <th class="text-center">Ocupação(%)</th>
-            <th class="text-center">Detalhes</th>
+            <th class="text-center">Ociosidade</th>
+            <th class="text-center">#</th>
         </thead>
         {% for objetos in objetos_lista%}
         <tbody>
-            <th class="text-center"> {{objetos.posicao}} </th>
+            <th class="text-center fw-light">
+                <a href="{% url 'detalhe' pk=objetos.id%}">{{objetos.posicao}}</a>
+            </th>
             <th class="text-center"> {{objetos.capacidade}}</th>
             <th class="text-center"> {{objetos.armazenado}}</th>
             <th class="text-center"> {{objetos.ocupacao}}</th>
-            <th class="text-center fw-light"> <a href="{% url 'detalhe' pk=objetos.id%}">Visualizar</a></th>
+            <th class="text-center"></th>
+            <th class="text-center">
+                <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
+                <i class="fa-solid fa-xmark fa-lg pe-2" title="Apagar" style="color: #ef2929;"></i>
+            </th>
         </tbody>
         {% endfor %}
     </table>

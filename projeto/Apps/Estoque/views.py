@@ -21,9 +21,11 @@ class CriarPosicao(CreateView):
     success_url = reverse_lazy('estoque')
 
 
-def detail_estoque(request, pk):
+class DetailPosicao(DetailView):
     template_name = './estoque/detail_posicao.html'
-    objetos_posicao = Posicao.objects.get(id=pk)
-    objetos_armazem = Armazenamento.objects.filter(posicao=objetos_posicao)
-    contexto = {'objetos_pos': objetos_posicao, 'objetos_arm':  objetos_armazem}
-    return render(request, template_name, contexto)
+    model = Posicao
+
+    def get_context_data(self, **kwargs):
+        contexto = super().get_context_data(**kwargs)
+        contexto["objetos_lista"] = Posicao.objects.all()
+        return contexto
