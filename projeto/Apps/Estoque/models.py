@@ -1,16 +1,19 @@
 from django.db import models
+from django.db.models import Sum
+from django.core.exceptions import ValidationError
 
 
 class Posicao(models.Model):
     posicao = models.CharField(max_length=30, default="", unique=True, error_messages={
         'unique': 'Essa posição já possui cadastro'
     })
+    armazenado = models.IntegerField(default=0)
     capacidade = models.IntegerField()
     ocupacao = models.IntegerField(default=0)
 
     def __str__(self):
         return self.posicao
-    
+
     class Meta:
         verbose_name = 'Posição'
         verbose_name_plural = 'Posições'
@@ -25,7 +28,7 @@ class Armazenamento(models.Model):
 
     def __str__(self):
         return self.PID
-    
+
     class Meta:
         verbose_name = 'Armazenamento'
         verbose_name_plural = 'Armazenamentos'

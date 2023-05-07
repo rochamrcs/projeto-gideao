@@ -27,6 +27,7 @@
             <th class="text-center">Posição</th>
             <th class="text-center">Produto</th>
             <th class="text-center">Modal</th>
+            <th class="text-center">Movimentação em:</th>
         </thead>
         {% for armazem in objetos_arm%}
         <tbody>
@@ -34,6 +35,7 @@
             <th class="text-center"> {{armazem.posicao}}</th>
             <th class="text-center"> {{armazem.produto}}</th>
             <th class="text-center"> {{armazem.modal}}</th>
+            <th class="text-center"> {{armazem.criado_em}}</th>
         </tbody>
         {% endfor %}
     </table>

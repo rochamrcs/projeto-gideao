@@ -3,7 +3,7 @@ from django.contrib import admin
 from projeto.Apps.Estoque.models import Armazenamento, Posicao
 
 class PosicaoAdmin(admin.ModelAdmin):
-    list_display = ('posicao', 'capacidade', 'ocupacao') #Personaliza a exibição de colunas no painel admin
+    list_display = ('posicao', 'capacidade','armazenado', 'ocupacao') #Personaliza a exibição de colunas no painel admin
     ordering = ['posicao'] #Ordena por posição no painel admin
 
 

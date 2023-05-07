@@ -18,6 +18,7 @@
         <thead class="table-dark">
             <th class="text-center">Posição</th>
             <th class="text-center">Capacidade</th>
+            <th class="text-center">Qntd. Armazenada</th>
             <th class="text-center">Ocupação(%)</th>
             <th class="text-center">Detalhes</th>
         </thead>
@@ -25,6 +26,7 @@
         <tbody>
             <th class="text-center"> {{objetos.posicao}} </th>
             <th class="text-center"> {{objetos.capacidade}}</th>
+            <th class="text-center"> {{objetos.armazenado}}</th>
             <th class="text-center"> {{objetos.ocupacao}}</th>
             <th class="text-center fw-light"> <a href="{% url 'detalhe' pk=objetos.id%}">Visualizar</a></th>
         </tbody>
