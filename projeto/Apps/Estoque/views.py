@@ -1,7 +1,5 @@
-from typing import Any, Dict
-from django.shortcuts import render, HttpResponse
 from django.views.generic import TemplateView, DetailView, CreateView
-from .models import Posicao, Armazenamento
+from .models import Posicao
 from .forms import PosicaoForm
 from django.urls import reverse_lazy
 
