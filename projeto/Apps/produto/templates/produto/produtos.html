@@ -8,7 +8,7 @@
 
 <div class="container pb-2">
 
-    <button type="button" class="btn btn-success ps-4 pe-4"><a href="" class="text-decoration-none text-reset" >Cadastrar produto</a></button>
+    <button type="button" class="btn btn-success ps-4 pe-4"><a href="{% url 'novo_produto'%}" class="text-decoration-none text-reset" >Cadastrar produto</a></button>
 
 </div>
   
@@ -28,9 +28,9 @@
             <th class="text-center fw-light">
                 <a href="">{{produto.produto}}</a>
             </th>
-            <th class="text-center"> {{produto.planta}}</th>
-            <th class="text-center"> {{produto.tipo}}</th>
-            <th class="text-center"> {{produto.criado_em|date:"d/m/Y H:i:s"}}</th>
+            <th class="text-center"> {{produto.get_planta_display}}</th>
+            <th class="text-center"> {{produto.get_tipo_display}}</th>
+            <th class="text-center"> {{produto.criado_em|date:"d/m/Y H:i"}}</th>
             <th class="text-center"></th>
             <th class="text-center">
                 <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
