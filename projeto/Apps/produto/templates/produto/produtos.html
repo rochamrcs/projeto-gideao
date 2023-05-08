@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+
+{% block title %} Produtos {% endblock title %}
+
+{% block content %}
+
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Produtos - Visão geral</h3>
+
+<div class="container pb-2">
+
+    <button type="button" class="btn btn-success ps-4 pe-4"><a href="" class="text-decoration-none text-reset" >Cadastrar produto</a></button>
+
+</div>
+  
+{% if produto_lista %}
+<div class="container table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <th class="text-center">Produto</th>
+            <th class="text-center">Planta</th>
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Criado em.</th>
+            <th class="text-center">Modificado em.</th>
+            <th class="text-center">#</th>
+        </thead>
+        {% for produto in produto_lista%}
+        <tbody>
+            <th class="text-center fw-light">
+                <a href="">{{produto.produto}}</a>
+            </th>
+            <th class="text-center"> {{produto.planta}}</th>
+            <th class="text-center"> {{produto.tipo}}</th>
+            <th class="text-center"> {{produto.criado_em|date:"d/m/Y H:i:s"}}</th>
+            <th class="text-center"></th>
+            <th class="text-center">
+                <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
+                <i class="fa-solid fa-xmark fa-lg pe-2" title="Apagar" style="color: #ef2929;"></i>
+            </th>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<div class="container">
+    <p class="alert alert-warning">Sem produtos cadastrados. Deseja <a href="">cadastrar</a>?</p>
+</div>
+{% endif %}
+
+
+{% endblock content %}

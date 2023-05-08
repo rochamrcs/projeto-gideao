@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models import Sum
-from django.core.exceptions import ValidationError
 
 
 class Posicao(models.Model):
