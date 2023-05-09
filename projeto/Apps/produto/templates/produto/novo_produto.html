@@ -8,8 +8,7 @@
 
 <h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Produtos - Cadastrar novo produto</h3>
 
-
-<div class="container bg-body-secondary mt-5 pt-3 pb-3 rounded">
+<div class="container bg-body-secondary mt-4 pt-3 pb-3 rounded">
     <form method="POST" action=".">  
         {% csrf_token %}
         {{ form|crispy }}  
