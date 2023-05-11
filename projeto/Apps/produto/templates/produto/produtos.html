@@ -42,8 +42,11 @@
             <th class="text-center"> {{produto.criado_em|date:"d/m/Y H:i"}}</th>
             <th class="text-center">{{produto.modificado_em|date:"d/m/Y H:i"}}</th>
             <th class="text-center">
-                <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
-                <i class="fa-solid fa-xmark fa-lg pe-2" title="Apagar" style="color: #ef2929;"></i>
+                <a class="text-decoration-none"
+                href="{% url 'atualizar_produto' produto.pk%}">
+                    <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
+                </a>
+                <i class="fa-solid fa-xmark fa-lg ps-3" title="Apagar" style="color: #ef2929;"></i>
             </th>
         </tbody>
         {% endfor %}
@@ -53,7 +56,7 @@
 <div class="container">
     <p class="alert alert-warning">Sem produtos cadastrados. Deseja <a href="{% url 'novo_produto'%}">cadastrar</a>?</p>
 </div>
-{% endif %}
 
+{% endif %}
 
 {% endblock content %}
