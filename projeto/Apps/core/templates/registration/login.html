@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+
+<div class="container text-center mt-5 pt-5">
+    <form method="POST" class="form-signin w-50 m-auto" >
+      {% csrf_token %}
+        <img class="mb-4" src="{% static 'img/login.png' %}" alt="" width="80" height="80">
+        <h1 class="h6 mb-3 fw-semibold">Sistema Gideão</h1>
+        <h1 class="h3 mb-3 fw-normal">Bem vindo(a):</h1>
+
+        <div class="form-floating mb-2">
+            <input type="username" class="form-control" id="floatingInput" name="username" placeholder="Username" required autofocus>
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" required>
+            <label for="floatingPassword">Senha</label>
+        </div>
+
+        {% for key, value in form.errors.items %}
+        <div class="checkbox mb-3 mt-3 alert alert-danger">
+            {{ value }}
+        </div>
+        {% endfor %}
+        
+    <div class="checkbox mb-3 mt-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Lembrar senha
+      </label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-body-secondary">Desenvolvido por Marcos Rocha - ©2023</p>
+    </form>
+</div>
+  {% endblock content %}

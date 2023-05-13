@@ -13,3 +13,22 @@ body {
 .asteriskField {
     color: red;
 }
+
+
+@media (max-width: 1000px) {
+    .w-50 {
+        width: 75% !important;
+    }
+}
+
+@media (min-width: 1001px) {
+    .w-50 {
+        width: 35% !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .w-50 {
+        width: 100% !important;
+    }
+}

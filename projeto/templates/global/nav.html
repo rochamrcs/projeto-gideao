@@ -87,20 +87,17 @@
 
         </ul>
 
-        <li class="nav-item dropdown d-flex me-5">
+        <li class="nav-item dropdown d-flex">
           <img 
-          class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+          class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
           src="{% static 'img/profile-user.png' %}" alt="Logo" width="30" height="30"> 
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
           </ul>
         </li>
 
-        <form class="d-flex me-3" role="search">
-          <button class="btn btn-secondary btn-sm" type="submit">Login</button>
-        </form>
       </div>
     </div>
   </nav>
