@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block title %} Produtos {% endblock title %}
 
 {% block content %}
@@ -7,41 +9,41 @@
 <h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Produtos - Visão geral</h3>
 
 {% if produto_lista %}
-<div class="container pb-2">
+<div class="container-fluid pb-2">
 
     <button type="button" class="btn btn-success ps-4 pe-4"><a href="{% url 'novo_produto'%}" class="text-decoration-none text-reset" >Cadastrar produto</a></button>
 
 </div>
   
 
-<div class="container table-responsive">
-    <table class="table">
+<div class="container-fluid">
+    <table class="table table-responsive">
         <thead class="table-dark">
-            <th class="text-center">Produto</th>
-            <th class="text-center">Planta</th>
-            <th class="text-center">Tipo</th>
-            <th class="text-center">Status</th>
-            <th class="text-center">Criado em.</th>
-            <th class="text-center">Modificado em.</th>
-            <th class="text-center">#</th>
+            <th class="text-center gd-table">Produto</th>
+            <th class="text-center gd-table">Planta</th>
+            <th class="text-center gd-table">Tipo</th>
+            <th class="text-center gd-table">Status</th>
+            <th class="text-center gd-table">Criado em.</th>
+            <th class="text-center gd-table">Modificado em.</th>
+            <th class="text-center gd-table">#</th>
         </thead>
         {% for produto in produto_lista%}
         <tbody>
-            <th class="text-center fw-light">
+            <th class="text-center fw-light gd-table">
                 <a href="">{{produto.produto}}</a>
             </th>
-            <th class="text-center"> {{produto.get_planta_display}}</th>
-            <th class="text-center"> {{produto.get_tipo_display}}</th>
-            <th class="text-center"> {{produto.get_status_display}}
+            <th class="text-center gd-table"> {{produto.get_planta_display}}</th>
+            <th class="text-center gd-table"> {{produto.get_tipo_display}}</th>
+            <th class="text-center gd-table"> {{produto.get_status_display}}
                 {% if produto.get_status_display == 'Ativo'%}
                     <i class="fa-solid fa-circle fa-2xs" style="color: #73d216;"></i>
                 {% else %}
                     <i class="fa-solid fa-circle fa-2xs" style="color: #ef2929;"></i>
                 {% endif %}
             </th>
-            <th class="text-center"> {{produto.criado_em|date:"d/m/Y H:i"}}</th>
-            <th class="text-center">{{produto.modificado_em|date:"d/m/Y H:i"}}</th>
-            <th class="text-center">
+            <th class="text-center gd-table"> {{produto.criado_em|date:"d/m/Y H:i"}}</th>
+            <th class="text-center gd-table">{{produto.modificado_em|date:"d/m/Y H:i"}}</th>
+            <th class="text-center gd-table">
                 <a class="text-decoration-none"
                 href="{% url 'atualizar_produto' produto.pk%}">
                     <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>

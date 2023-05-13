@@ -6,17 +6,18 @@
 
 <h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Posições - Visão geral</h3>
 
-<div class="container pb-2">
-
+<div class="container-fluid pb-2">
+    {% if objetos_lista %}
     <button type="button" class="btn btn-success ps-4 pe-4"><a href="{% url 'nova_posicao'%}" class="text-decoration-none text-reset" >Cadastrar posição</a></button>
-
+    {% endif %}
 </div>
   
 {% if objetos_lista %}
-<div class="container table-responsive">
+<div class="container-fluid table-responsive">
     <table class="table">
         <thead class="table-dark">
             <th class="text-center">Posição</th>
+            <th class="text-center">Area</th>
             <th class="text-center">Capacidade</th>
             <th class="text-center">Qntd. Armazenada</th>
             <th class="text-center">Ocupação(%)</th>
@@ -28,6 +29,7 @@
             <th class="text-center fw-light">
                 <a href="{% url 'detalhe' pk=objetos.id%}">{{objetos.posicao}}</a>
             </th>
+            <th class="text-center"> {{objetos.get_area_display}}</th>
             <th class="text-center"> {{objetos.capacidade}}</th>
             <th class="text-center"> {{objetos.armazenado}}</th>
             <th class="text-center"> {{objetos.ocupacao}}</th>
@@ -41,7 +43,7 @@
     </table>
 </div>
 {% else %}
-<div class="container">
+<div class="container-fluid">
     <p class="alert alert-warning">Sem posições cadastradas. Deseja <a href="{% url 'nova_posicao'%}">cadastrar</a>?</p>
 </div>
 {% endif %}

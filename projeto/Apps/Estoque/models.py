@@ -1,10 +1,16 @@
 from django.db import models
 
+AREA = [
+    ('','Selecione'),
+    ('I', 'INTERNA'),
+    ('E', 'EXTERNA')
+]
 
 class Posicao(models.Model):
     posicao = models.CharField(max_length=30, default="", unique=True, error_messages={
         'unique': 'Essa posição já possui cadastro'
     })
+    area = models.CharField(max_length=2, choices=AREA, default='')
     armazenado = models.IntegerField(default=0)
     capacidade = models.IntegerField()
     ocupacao = models.IntegerField(default=0)

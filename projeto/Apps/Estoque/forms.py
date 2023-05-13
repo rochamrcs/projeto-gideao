@@ -5,4 +5,4 @@ class PosicaoForm(forms.ModelForm):
 
     class Meta:
         model = Posicao
-        fields = ['posicao', 'capacidade']
+        fields = ['posicao', 'capacidade', 'area']
