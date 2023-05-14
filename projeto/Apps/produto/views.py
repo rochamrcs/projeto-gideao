@@ -1,4 +1,3 @@
-from typing import Any, Dict
 from django.views.generic import TemplateView, CreateView, UpdateView
 from .models import Produto
 from .forms import ProdutoForm, AtualizarProdutoForm
