@@ -12,7 +12,7 @@ body {
 }
 
 .gd-table {
-    white-space: nowrap !important
+    white-space: nowrap
 }
 
 @media (max-width: 1000px) {

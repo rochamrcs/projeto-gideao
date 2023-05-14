@@ -29,7 +29,7 @@ class Produto(models.Model):
     modificado_em = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.criado_em.strftime('%d/%m/%Y %H:%M:%S')
+        return self.produto
     
     class Meta:
         verbose_name = 'Produto'

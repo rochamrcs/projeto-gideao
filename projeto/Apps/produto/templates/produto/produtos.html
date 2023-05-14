@@ -16,8 +16,8 @@
 </div>
   
 
-<div class="container-fluid">
-    <table class="table table-responsive">
+<div class="container-fluid table-responsive">
+    <table class="table">
         <thead class="table-dark">
             <th class="text-center gd-table">Produto</th>
             <th class="text-center gd-table">Planta</th>
@@ -48,7 +48,7 @@
                 href="{% url 'atualizar_produto' produto.pk%}">
                     <i class="fa-solid fa-gear pe-2" title="Editar" style="color: #204a87;"></i>
                 </a>
-                <i class="fa-solid fa-xmark fa-lg ps-3" title="Apagar" style="color: #ef2929;"></i>
+                <i class="fa-solid fa-xmark fa-lg ps-2 me-2" title="Apagar" style="color: #ef2929;"></i>
             </th>
         </tbody>
         {% endfor %}
