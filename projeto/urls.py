@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('projeto.Apps.core.urls')),
     path('estoque/', include('projeto.Apps.Estoque.urls')),
-    path('produto/', include('projeto.Apps.produto.urls'))
+    path('produto/', include('projeto.Apps.produto.urls')),
+    path('producao/', include('projeto.Apps.producao.urls'))
 ]

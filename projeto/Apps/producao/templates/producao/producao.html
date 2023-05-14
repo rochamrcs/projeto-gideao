@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block title %} Produção {% endblock title %}
+
+{% block content %}
+
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Produção - Visão geral</h3>
+
+{% if producao_lista %}
+<div class="container-fluid pb-2">
+
+    <button type="button" class="btn btn-success ps-4 pe-4"><a href="" class="text-decoration-none text-reset" >Nova Produção</a></button>
+
+</div>
+  
+
+<div class="container-fluid table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <th class="text-center gd-table">Ordem</th>
+            <th class="text-center gd-table">Produto</th>
+            <th class="text-center gd-table">Modal</th>
+            <th class="text-center gd-table">Lote</th>
+            <th class="text-center gd-table">Planta</th>
+            <th class="text-center gd-table">Linha</th>
+            <th class="text-center gd-table">Volume</th>
+            <th class="text-center gd-table">Status</th>
+        </thead>
+        {% for producao in producao_lista%}
+        <tbody>
+            <th class="text-center fw-light gd-table">
+                <a href="">{{producao.ordem}}</a>
+            </th>
+            <th class="text-center gd-table"> {{producao.produto}}</th>
+            <th class="text-center gd-table"> {{producao.get_modal_display}}</th>
+            <th class="text-center gd-table"> {{producao.lote}}</th>
+            <th class="text-center gd-table"> {{producao.planta}}</th>
+            <th class="text-center gd-table"> {{producao.linha}}</th>
+            <th class="text-center gd-table"> {{producao.volume}}</th>
+            <th class="text-center gd-table"> {{producao.get_status_display}}
+                {% if producao.get_status_display == 'Pendente'%}
+                    <i class="fa-solid fa-circle fa-2xs" style="color: #7d7e7d;"></i>
+                {% elif producao.get_status_display == 'Em amdamento'%}
+                    <i class="fa-solid fa-circle fa-2xs" style="color: #eff308;"></i>
+                {% else %}
+                    <i class="fa-solid fa-circle fa-2xs" style="color: #23e409;"></i>
+                {% endif %}
+            </th>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<div class="container">
+    <p class="alert alert-warning">Sem produtos cadastrados. Deseja <a href="{% url 'novo_produto'%}">cadastrar</a>?</p>
+</div>
+
+{% endif %}
+
+{% endblock content %}
