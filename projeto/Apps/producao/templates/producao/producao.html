@@ -21,7 +21,12 @@
         <div class="col mb-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Lote: {{ producao.lote }}</h5>
+                <div class="d-flex justify-content-between">
+
+                <h5 class="card-title p-0">Lote: {{ producao.lote }}</h5>
+                <span class="card-title badge rounded-pill color-pill pt-2 pb-2 text-dark">Linha: {{ producao.linha }}</span>
+
+                </div>
               <h6 class="card-subtitle mb-2 text-body-secondary">
                 Status:
                 {% if producao.get_status_display == 'Pendente' %} 
@@ -32,8 +37,10 @@
                 <span class="badge rounded-pill text-bg-success">{{ producao.get_status_display }}</span>
                 {% endif %} 
               </h6>
+
               <p class="card-text">
-                <div>Volume total: {{ producao.volume }}</div>
+                <div class="mb-3">Produto: {{ producao.produto }} {{ producao.get_modal_display }}</div>
+                <div>Volume planejado: {{ producao.volume }}</div>
                 <div>Volume ensacado: 0</div>
               </p>
               <a href="#" class="card-link">

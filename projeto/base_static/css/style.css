@@ -2,6 +2,9 @@ body {
     overflow-x: hidden;
 }
 
+.color-pill {
+    background-color: rgb(189, 189, 177);
+}
 
 .brand {
     color: rgb(236, 174, 4);
