@@ -15,46 +15,40 @@
 
 </div>
   
+<div class="container-fluid mb-5 pb-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      {% for producao in producao_lista%}
+        <div class="col mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Lote: {{ producao.lote }}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">
+                Status:
+                {% if producao.get_status_display == 'Pendente' %} 
+                <span class="badge rounded-pill text-bg-secondary">{{ producao.get_status_display }}</span>
+                {% elif producao.get_status_display == 'Em andamento' %} 
+                <span class="badge rounded-pill text-bg-warning">{{ producao.get_status_display }}</span>
+                {% else %} 
+                <span class="badge rounded-pill text-bg-success">{{ producao.get_status_display }}</span>
+                {% endif %} 
+              </h6>
+              <p class="card-text">
+                <div>Volume total: {{ producao.volume }}</div>
+                <div>Volume ensacado: 0</div>
+              </p>
+              <a href="#" class="card-link">
+                <button type="button" class="btn btn-secondary">Acessar</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>  
 
-<div class="container-fluid table-responsive">
-    <table class="table">
-        <thead class="table-dark">
-            <th class="text-center gd-table">Ordem</th>
-            <th class="text-center gd-table">Produto</th>
-            <th class="text-center gd-table">Modal</th>
-            <th class="text-center gd-table">Lote</th>
-            <th class="text-center gd-table">Planta</th>
-            <th class="text-center gd-table">Linha</th>
-            <th class="text-center gd-table">Volume</th>
-            <th class="text-center gd-table">Status</th>
-        </thead>
-        {% for producao in producao_lista%}
-        <tbody>
-            <th class="text-center fw-light gd-table">
-                <a href="">{{producao.ordem}}</a>
-            </th>
-            <th class="text-center gd-table"> {{producao.produto}}</th>
-            <th class="text-center gd-table"> {{producao.get_modal_display}}</th>
-            <th class="text-center gd-table"> {{producao.lote}}</th>
-            <th class="text-center gd-table"> {{producao.planta}}</th>
-            <th class="text-center gd-table"> {{producao.linha}}</th>
-            <th class="text-center gd-table"> {{producao.volume}}</th>
-            <th class="text-center gd-table"> {{producao.get_status_display}}
-                {% if producao.get_status_display == 'Pendente'%}
-                    <i class="fa-solid fa-circle fa-2xs" style="color: #7d7e7d;"></i>
-                {% elif producao.get_status_display == 'Em amdamento'%}
-                    <i class="fa-solid fa-circle fa-2xs" style="color: #eff308;"></i>
-                {% else %}
-                    <i class="fa-solid fa-circle fa-2xs" style="color: #23e409;"></i>
-                {% endif %}
-            </th>
-        </tbody>
-        {% endfor %}
-    </table>
-</div>
 {% else %}
 <div class="container">
-    <p class="alert alert-warning">Sem produtos cadastrados. Deseja <a href="{% url 'novo_produto'%}">cadastrar</a>?</p>
+    <p class="alert alert-warning">Nem uma produção prevista. Deseja <a href="">iniciar uma nova</a>?</p>
 </div>
 
 {% endif %}

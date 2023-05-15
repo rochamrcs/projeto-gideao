@@ -14,7 +14,6 @@
     <title>Gideão |{% block title %} Ínicio {% endblock title %}</title>
 </head>
 <body class="bg-body-tertiary">
-
     {% if  user.is_authenticated %}
 
         {% include 'nav.html' %}
@@ -27,8 +26,8 @@
 
     {% if user.is_authenticated %}
     
-        <footer class="container-fluid text-white bg-dark fixed-bottom py-3">
-            <div class="row pt-2 pb-2">
+        <footer class="footer fixed-bottom text-white bg-dark py-3 mt-4">
+            <div class="container-fluid row pt-2 pb-2">
                 <h8 class="brand">Desenvolvido por: Marcos Rocha</h8>
             </div>
         </footer>
