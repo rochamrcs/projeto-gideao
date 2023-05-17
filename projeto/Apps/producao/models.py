@@ -25,6 +25,7 @@ class Producao(models.Model):
     linha = models.CharField(max_length=15)
     volume = models.PositiveIntegerField(validators=[valida_volume])
     status = models.CharField(max_length=12, choices=STATUS, default='')
+    ensacado = models.PositiveIntegerField(default=0)
     
 
     def __str__(self):
