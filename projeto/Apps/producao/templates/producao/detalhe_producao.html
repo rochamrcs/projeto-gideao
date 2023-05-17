@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block title %} Lote - {{object.lote}} {% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h3 class="pb-3 border-bottom ps-4"><i class="me-2 fa-sharp fa-solid fa-tag fa-sm"></i>Detalhes ordem - {{object.ordem}} <button type="reset" class="btn btn-secondary ms-3"><a href="{% url 'producao'%}" class="text-decoration-none text-reset" > Retornar </a></button></h3>
+
+
+<div class="container mx-auto bg-body-secondary pt-3 pb-3 rounded text-center">
+    
+    <span class="fw-bold">Detalhes da produção: {{object.ordem}}</span><br>
+    <br>
+    <a>Planejado: {{object.volume}} | </a>
+    <a>Realizado: {{object.ensacado}}%</a>
+ 
+</div>
+
+
+{% endblock content %}

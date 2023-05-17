@@ -43,7 +43,7 @@
                 <div>Volume planejado: {{ producao.volume }}</div>
                 <div>Volume ensacado: 0</div>
               </p>
-              <a href="#" class="card-link">
+              <a href="{% url 'detalhe_producao' pk=producao.id%}" class="card-link">
                 <button type="button" class="btn btn-secondary">Acessar</button>
               </a>
             </div>
