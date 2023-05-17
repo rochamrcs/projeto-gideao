@@ -17,15 +17,15 @@ STATUS = [
 ]
 
 class Producao(models.Model):
-    ordem = models.IntegerField(validators=[validar_ordem], unique=True)
+    ordem = models.CharField(max_length=8, validators=[validar_ordem], unique=True)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     lote = models.CharField(max_length=10, validators=[valida_lote], unique=True)
     planta = models.CharField(max_length=2, choices=PLANTA)
     modal = models.CharField(max_length=5, choices=MODAL)
     linha = models.CharField(max_length=15)
-    volume = models.PositiveIntegerField(validators=[valida_volume])
-    status = models.CharField(max_length=12, choices=STATUS, default='')
-    ensacado = models.PositiveIntegerField(default=0)
+    volume = models.CharField(max_length=6,validators=[valida_volume])
+    status = models.CharField(max_length=12, choices=STATUS, default='P')
+    ensacado = models.CharField(max_length=6, default=0)
     
 
     def __str__(self):

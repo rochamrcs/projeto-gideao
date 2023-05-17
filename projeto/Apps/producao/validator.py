@@ -8,8 +8,8 @@ def validar_ordem(value):
     for n in str(value):
         lista.append(n)
 
-    if not isinstance(value, int):
-        raise ValueError('Entrada inválida, apenas números inteiros')
+    if not value.isdigit():
+        raise ValidationError('Entrada inválida, apenas números inteiros')
     
     if len(lista) != 8:
         raise ValidationError(f'O número {value} tem que ter 8 caracteres numericos.')
@@ -43,3 +43,6 @@ def valida_volume(value):
 
     if resultado != 6:
         raise ValidationError(f'Volume inválido.')
+    
+    if not re.match(r'^[0-9]+$', value):
+        raise ValidationError(f'Valor invalído.')
