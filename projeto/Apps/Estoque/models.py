@@ -28,6 +28,8 @@ class Armazenamento(models.Model):
     posicao = models.ForeignKey(Posicao, on_delete=models.PROTECT)
     produto = models.CharField(max_length=25)
     modal = models.CharField(max_length=5)
+    lote = models.CharField(max_length=25, default='lote')
+    volume = models.CharField(max_length=2, default=0)
     criado_em = models.DateTimeField(auto_now=True)
 
     def __str__(self):
