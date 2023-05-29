@@ -12,7 +12,9 @@
 
 <div class="container mx-auto bg-body-secondary pt-3 pb-3 rounded text-center">
     
-    <span class="fw-bold">Detalhes da produção: {{object.ordem}}</span><br>
+    <span class="fw-bold">
+        Detalhes da produção: {{object.produto}} {{object.get_modal_display}} - {{object.lote}}
+    </span>
     <br>
     <a>Planejado: {{object.volume}} | </a>
     <a>Realizado: {{object.ensacado}}%</a>
@@ -21,7 +23,7 @@
 
 <div class="container mx-auto bg-body-secondary mt-3 pb-3 rounded text-center">
     <div class="d-flex flex-row pt-3">
-        <button type="reset" class="btn btn-warning ms-3"><a href="#" class="text-decoration-none text-reset" > Apontar </a></button>
+        <button type="reset" class="btn btn-warning ms-3"><a href="{% url 'apontar_producao' producao.pk %}" class="text-decoration-none text-reset" > Apontar </a></button>
     </div>
 </div>
 
@@ -38,11 +40,11 @@
           </tr>
         </thead>
         <tbody>
-            <th class="text-center gd-table">1</th>
-            <th class="text-center gd-table">1</th>
-            <th class="text-center gd-table">1</th>
-            <th class="text-center gd-table">1</th>
-            <th class="text-center gd-table">1</th>
+            <th class="text-center gd-table"></th>
+            <th class="text-center gd-table"></th>
+            <th class="text-center gd-table"></th>
+            <th class="text-center gd-table"></th>
+            <th class="text-center gd-table"></th>
         </tbody>
       </table>
 </div>

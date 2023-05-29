@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView, CreateView, UpdateView, DetailView
 from .models import Producao
-from .forms import ProducaoForm
+from .forms import ProducaoForm, ApontarForm
 from django.urls import reverse_lazy
 
 
@@ -27,3 +27,10 @@ class DetailProducao(DetailView):
         contexto = super().get_context_data(**kwargs)
         contexto["producao_lista"] = Producao.objects.all()
         return contexto
+
+
+class ApontarProducao(UpdateView):
+    template_name = './producao/apontar_producao.html'
+    form_class = ApontarForm
+    model = Producao
+    success_url = reverse_lazy('producao')

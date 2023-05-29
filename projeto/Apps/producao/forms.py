@@ -6,3 +6,9 @@ class ProducaoForm(forms.ModelForm):
     class Meta:
         model = Producao
         fields = ['ordem', 'produto','modal', 'lote', 'planta', 'linha', 'volume']
+
+class ApontarForm(forms.ModelForm):
+
+    class Meta:
+        model = Producao
+        fields = ['ensacado']
