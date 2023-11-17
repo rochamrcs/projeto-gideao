@@ -1,3 +1,3 @@
 # Gerenciador de Estoque - Gideão
 
-Um sistema para regerenciar estoques feito com Django.
+Um sistema para gerenciar estoques feito com Django.
