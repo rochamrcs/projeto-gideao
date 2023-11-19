@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500&family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet">
+    <link href="../../static/styles/signin.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <body class="text-center">
+    
+        <main class="form-signin">
+          <form method="POST">
+            {% csrf_token %}
+            <img class="mb-4" src="../../static/assets/logo/img_Logo.svg" alt="" width="120" height="120">
+            <h1 class="h3 mb-5 fw-normal boas-vindas">Bem vindo(a), ao <span>Gideão!</span></h1>
+        
+            <div class="form-floating">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+              <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-5">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <button class="w-100 btn btn-lg btn-dark mb-5" type="submit">Login</button>
+
+            <div class="checkbox mb-3">
+                <a href="">Esqueceu sua senha?</a>
+              </div>
+
+            <p class="mt-5 mb-3 text-muted">Desenvolvido por Marcos Rocha</p>
+          </form>
+        </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
