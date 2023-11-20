@@ -1,0 +1,80 @@
+body, html {
+    background-color: rgba(44, 44, 44, 1);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex; /* Para centralizar verticalmente */
+    justify-content: center; /* Para centralizar horizontalmente */
+    align-items: center; /* Para centralizar verticalmente */
+}
+
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    color: aliceblue;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Defina a cor desejada para o menu */
+    text-align: left; /* Alinha o texto à esquerda */
+    z-index: 1; /* Para garantir que fique na frente da imagem de fundo */
+}
+
+.botao {
+    display: block;
+    color: black; /* Defina a cor desejada para os links */
+    text-decoration: none;
+    margin-bottom: 20px; /* Espaço entre os links */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.config-icon, .logoff-icon {
+    position: absolute;
+    bottom: 10px;
+    width: 40px;
+    height: auto;
+    z-index: 1;
+}
+
+.config-icon {
+    left: 10px;
+}
+
+.logoff-icon {
+    left: 70px; /* Ajusta o espaçamento entre as imagens */
+}
+
+.gideao-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.btn-gideao-sim {
+    width: 102px;
+    height: 31px;
+    background-color: rgba(9, 146, 104, 1);
+    border-radius: 34px;  
+}
+
+.btn-gideao-nao {
+    width: 102px;
+    height: 31px;
+    background-color: rgba(201, 42, 42, 1);
+    border-radius: 34px;
+}
+
+.custom-modal {
+    background-color: rgba(44, 44, 44, 1);
+}
