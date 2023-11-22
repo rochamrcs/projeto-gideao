@@ -54,27 +54,11 @@ h1 {
     left: 70px; /* Ajusta o espaçamento entre as imagens */
 }
 
-.gideao-text {
-    font-size: 15px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
+.texto-branco {
+    color: white;
 }
 
-.btn-gideao-sim {
-    width: 102px;
-    height: 31px;
-    background-color: rgba(9, 146, 104, 1);
-    border-radius: 34px;  
-}
-
-.btn-gideao-nao {
-    width: 102px;
-    height: 31px;
-    background-color: rgba(201, 42, 42, 1);
-    border-radius: 34px;
-}
-
-.custom-modal {
-    background-color: rgba(44, 44, 44, 1);
+.fs-7 {
+    font-size: smaller;
+    font-weight: bolder;
 }

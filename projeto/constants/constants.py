@@ -1,44 +1,48 @@
 PLANTA = [
-    ('PE', 'PE9'),
-    ('PP', 'PP5')
+    ('','Selecione'),
+    ('PE9', 'PE9'),
+    ('PP5', 'PP5')
 ]
 
 LINHA = [
-    ('1', 'L1'),
-    ('2', 'L2'),
-    ('3', 'L3'),
-    ('4', 'L4'),
-    ('5', 'Bag A'),
-    ('6', 'Bag B')
+    ('','Selecione'),
+    ('L1', 'L1'),
+    ('L2', 'L2'),
+    ('L3', 'L3'),
+    ('L4', 'L4'),
+    ('Bag A', 'Bag A'),
+    ('Bag B', 'Bag B')
 ]
 
 MODAL = [
-    ('PL', 'PL14'),
-    ('BR', 'BR25'),
-    ('RR', 'BRR25')
+    ('','Selecione'),
+    ('PL15', 'PL14'),
+    ('BR25', 'BR25'),
+    ('BRR25', 'BRR25')
 ]
 
 FAMILIA = [
-    ('A', 'PEAD'),
-    ('B', 'PEBDL'),
-    ('AT', 'ALTA'),
-    ('BA', 'BAIXA')
+    ('','Selecione'),
+    ('PEAD', 'PEAD'),
+    ('PEBDL', 'PEBDL'),
+    ('Alta', 'ALTA'),
+    ('Baixa', 'BAIXA')
 ]
 
-SIM = True
-NAO = False
 
 STATUS = [
-    (SIM, 'Ativo'),
-    (NAO, 'Inativo')
+    ('Ativo', 'Ativo'),
+    ('Inativo', 'Inativo')
 ]
 
 EMPILHAMENTO = [
-    (SIM, 'Sim'),
-    (NAO, 'Não')
+    ('','Selecione'),
+    ('Sim', 'Sim'),
+    ('Nao', 'Não')
 ]
 
 EMPILHAMENTO_TIPO = [
-    ('1', 'NORMAL'),
-    ('2', 'IGREJINHA')
+    ('','Selecione'),
+    ('Normal', 'Normal'),
+    ('Igrejinha', 'Igrejinha')
 ]

@@ -1,0 +1,24 @@
+.gideao-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.btn-gideao-sim {
+    width: 102px;
+    height: 31px;
+    background-color: rgba(9, 146, 104, 1);
+    border-radius: 34px;  
+}
+
+.btn-gideao-nao {
+    width: 102px;
+    height: 31px;
+    background-color: rgba(201, 42, 42, 1);
+    border-radius: 34px;
+}
+
+.custom-modal {
+    background-color: rgba(44, 44, 44, 1);
+}

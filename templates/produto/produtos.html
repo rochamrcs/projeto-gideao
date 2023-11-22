@@ -1,0 +1,76 @@
+{% extends 'global/base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="conteudo-especifico">
+    <div class="cabecalho">
+        <a class="btn-voltar" href="/">
+            <img src="{% static 'assets/icones/btn_voltar.svg'%}" width="25px" height="25px">
+        </a>
+        <h1>Produtos</h1>
+    </div>
+
+    <a href="{% url 'novo_produto' %}" class="btn btn-light botao centralizado">Novo cadastro</a>
+
+  <form class="d-flex mb-3" action="{% url 'buscar_produto' %}" method="GET">
+    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="buscar_produtos">
+    <button class="btn btn-light" type="submit">Buscar</button>
+  </form>
+
+<table class="table table-dark tabela table-hover">
+    <thead class="text-center">
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Familia</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      {% for produto in produtos %}
+      <tr>
+        <td>{{ produto.produto }}</td>
+        <td>{{ produto.get_familia_display }}</td>
+        <td>{{ produto.get_status_display }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p class="total">Total de produtos: {{ produtos.paginator.count }}</p>
+
+  <nav>
+    <ul class="pagination justify-content-center" style="z-index: 1;">
+      {% if produtos.has_previous %}
+      <li class="page-item">
+        <a style="color: black;" class="page-link" href="?page={{ produtos.previous_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Anterior</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Anterior</span>
+      </li>
+      {% endif %}
+  
+      <li class="page-item disabled">
+        <span class="page-link">
+          {{ produtos.number }} de {{ produtos.paginator.num_pages }}
+        </span>
+      </li>
+  
+      {% if produtos.has_next %}
+      <li class="page-item">
+        <a style="color: black;" class="page-link" href="?page={{ produtos.next_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Próxima</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">Próxima</span>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  
+  
+
+</div>  
+{% endblock %}

@@ -1,0 +1,47 @@
+.conteudo-especifico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 800px; /* Largura máxima para o conteúdo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cabecalho {
+    position: relative;
+}
+
+.cabecalho h1 {
+    display: block;
+    width: 100%;
+}
+
+.btn-voltar {
+    position: absolute;
+    z-index: 1;
+    left: -90%;
+}
+
+.botao.centralizado {
+    display: block;
+    margin: 20px auto;
+}
+
+.tabela {
+    margin: 0 auto;
+}
+
+.total {
+    color: white;
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+.form-label {
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-bottom: .5rem; /* Ajuste conforme necessário */
+}
