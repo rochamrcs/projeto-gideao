@@ -16,18 +16,20 @@
         {% csrf_token %}
         <div class="colum">
             {% for field in form.visible_fields %}
-            <div class="col-12 col-md-12">
-                <label class= "form-label texto-branco fs-7" for="{{ field.id_for_label }}">{{ field.label}}</label>
-                {{ field }}
-                {% if field.errors %}
-                    {% for error in field.errors %}
-                    <p class="errorlist" style="color: red;">Produto existente</p>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        {% endfor %}
+                <div class="col-12 col-md-12">
+                    <label class="form-label texto-branco fs-7" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p class="errorlist" style="color: red;">Produto existente</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
         <button class="btn btn-success botao centralizado mt-5" type="submit">Salvar</button>
     </form>
 </div>
+
+
 {% endblock %}

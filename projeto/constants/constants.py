@@ -43,6 +43,7 @@ EMPILHAMENTO = [
 
 EMPILHAMENTO_TIPO = [
     ('','Selecione'),
+    ('NA', 'NA'),
     ('Normal', 'Normal'),
     ('Igrejinha', 'Igrejinha')
 ]
