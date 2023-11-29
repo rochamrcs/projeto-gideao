@@ -3,9 +3,10 @@ from projeto.apps.produto.models import Produto
 
 
 class ProdutoForms(forms.ModelForm):
+
     class Meta:
         model = Produto
-        exclude = ['data_criacao', 'data_modificacao', 'status']
+        exclude = ['data_criacao', 'data_modificacao']
         labels = {
             'produto': 'Produto',
             'planta': 'Planta',
@@ -21,5 +22,5 @@ class ProdutoForms(forms.ModelForm):
             'empilhamento': forms.Select(attrs={'class':'form-select form-select-sm mb-2','id': 'id_empilhamento'}),
             'empilhamento_tipo': forms.Select(attrs={'class':'form-select form-select-sm mb-2','id': 'id_empilhamento_tipo'}),
             'familia': forms.Select(attrs={'class':'form-select form-select-sm mb-2'}),
-            'status': forms.Select(attrs={'class':'form-select form-select-sm mb-2'})
+            'status': forms.Select(attrs={'class':'form-select form-select-sm mb-2', 'id': 'id_status'})
         }

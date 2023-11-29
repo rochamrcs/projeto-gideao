@@ -20,7 +20,7 @@
     <button class="btn btn-light" type="submit">Buscar</button>
   </form>
 
-<table class="table table-dark tabela table-hover">
+<table class="table table-hover table-dark" style="z-index: 1;">
     <thead class="text-center">
       <tr>
         <th scope="col">Produto</th>
@@ -31,7 +31,7 @@
     <tbody class="text-center">
       {% for produto in produtos %}
       <tr>
-        <td>{{ produto.produto }}</td>
+        <td><a href="{% url 'detalhe_produto' produto.pk %}">{{ produto.produto }}</a></td>
         <td>{{ produto.get_familia_display }}</td>
         <td>{{ produto.get_status_display }}</td>
       </tr>

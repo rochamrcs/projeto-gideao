@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500&family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet">
-    <link href="../../static/styles/signin.css" rel="stylesheet">
+    <link href="{% static 'styles/signin.css'%}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/favicon/gideao.ico' %}">
     <title>Gideão - Login</title>
 </head>
@@ -20,7 +20,7 @@
         <main class="form-signin">
           <form method="POST">
             {% csrf_token %}
-            <img class="mb-4" src="../../static/assets/logo/img_Logo.svg" alt="" width="120" height="120">
+            <img class="mb-4" src="{% static 'assets/logo/img_Logo.svg' %}" alt="" width="120" height="120">
             <h1 class="h3 mb-5 fw-normal boas-vindas">Bem vindo(a), ao <span>Gideão!</span></h1>
         
             <div class="form-floating">

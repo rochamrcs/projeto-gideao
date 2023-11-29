@@ -4,22 +4,32 @@ $(document).ready(function(){
         window.location.href = url;
     });
 
-    var empilhamentoField = $('#id_empilhamento');
-    var empilhamentoTipoField = $('#id_empilhamento_tipo').closest('.col-12');
+        var empilhamentoField = $('#id_empilhamento');
+        var empilhamentoTipoField = $('#id_empilhamento_tipo').closest('.col-12');
 
-    empilhamentoField.change(function(){
-        var empilhamentoValue = $(this).val();
-        if (empilhamentoValue === 'Sim') {
-            empilhamentoTipoField.show();
-            $('#id_empilhamento_tipo option[value="NA"]').prop('disabled', true);
-            $('#id_empilhamento_tipo option[value="NA"]').prop('selected', false);
-        } else {
-            empilhamentoTipoField.hide();
-            $('#id_empilhamento_tipo option[value="NA"]').prop('selected', true);
-        }
-    });
+        empilhamentoField.change(function(){
+            var empilhamentoValue = $(this).val();
+            if (empilhamentoValue === 'Sim') {
+                empilhamentoTipoField.show();
+                $('#id_empilhamento_tipo').val('');
+                $('#id_empilhamento_tipo').prop('disabled', false);
+                $('#id_empilhamento_tipo option[value="NA"]').prop('disabled', true);
+                $('#id_empilhamento_tipo option[value="Normal"]').prop('disabled', false);
+                $('#id_empilhamento_tipo option[value="Igrejinha"]').prop('disabled', false);
+            } else {
+                empilhamentoTipoField.show();
+                $('#id_empilhamento_tipo').val('');
+                $('#id_empilhamento_tipo option[value="NA"]').prop('disabled', false);
+                $('#id_empilhamento_tipo option[value="Normal"]').prop('disabled', true);
+                $('#id_empilhamento_tipo option[value="Igrejinha"]').prop('disabled', true);
+            }
+        });
 
-    // Oculta 'empilhamento_tipo' por padrão
-    empilhamentoTipoField.hide();
+        // Oculta 'empilhamento_tipo' por padrão
+        //empilhamentoTipoField.hide();
+        //$('#id_empilhamento_tipo option[value="NA"]').prop('disabled', true);
+
+    var statusField = $('#id_status').closest('.col-12');
+    statusField.hide();
 
 });

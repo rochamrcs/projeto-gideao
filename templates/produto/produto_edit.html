@@ -12,11 +12,11 @@
         <h1>Produtos</h1>
     </div>
 
-    <form class="mt-5" action="{% url 'novo_produto' %}" method="POST" enctype="multipart/form-data">
+    <form class="mt-5" action="{% url 'editar_produto' produto_id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="colum">
-            {% for field in form.visible_fields %}  
-                <div class="col-12 col-md-12">
+            {% for field in form.visible_fields %}
+                <div class="col-13 col-md-12">
                     <label class="form-label texto-branco fs-7" for="{{ field.id_for_label }}">{{ field.label }}</label>
                     {{ field }}
                     {% if field.errors %}
