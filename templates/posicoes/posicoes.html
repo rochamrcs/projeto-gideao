@@ -29,20 +29,22 @@
       </tr>
     </thead>
     <tbody class="text-center">
+      {% for posicao in posicoes %}
       <tr>
-        <td><a href="">A000</a></td>
-        <td>21</td>
-        <td>100%</td>
+        <td><a href="">{{ posicao.posicao }}</a></td>
+        <td>{{ posicao.capacidade }}</td>
+        <td>{{ posicao.ocupacao }}</td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
-  <p class="total">Total de posições: 00</p>
+  <p class="total">Total de posições: {{ posicoes.paginator.count }}</p>
 
   <nav>
     <ul class="pagination justify-content-center" style="z-index: 1;">
-      {% if produtos.has_previous %}
+      {% if posicao.has_previous %}
       <li class="page-item">
-        <a style="color: black;" class="page-link" href="?page={{ produtos.previous_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Anterior</a>
+        <a style="color: black;" class="page-link" href="?page={{ posicao.previous_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Anterior</a>
       </li>
       {% else %}
       <li class="page-item disabled">
@@ -52,13 +54,13 @@
   
       <li class="page-item disabled">
         <span class="page-link">
-          {{ produtos.number }} de {{ produtos.paginator.num_pages }}
+          {{ posicao.number }} de {{ posicao.paginator.num_pages }}
         </span>
       </li>
   
-      {% if produtos.has_next %}
+      {% if posicao.has_next %}
       <li class="page-item">
-        <a style="color: black;" class="page-link" href="?page={{ produtos.next_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Próxima</a>
+        <a style="color: black;" class="page-link" href="?page={{ posicao.next_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Próxima</a>
       </li>
       {% else %}
       <li class="page-item disabled">
