@@ -13,10 +13,10 @@
         <h1>Posições</h1>
     </div>
 
-    <a href="" class="btn btn-light botao centralizado">Novo cadastro</a>
+    <a href="{% url 'nova_posicao' %}" class="btn btn-light botao centralizado">Novo cadastro</a>
 
-  <form class="d-flex mb-3" action="" method="GET">
-    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="buscar_produtos">
+  <form class="d-flex mb-3" action="{% url 'buscar_posicoes' %}" method="GET">
+    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="buscar_posicoes">
     <button class="btn btn-light" type="submit">Buscar</button>
   </form>
 
@@ -42,9 +42,9 @@
 
   <nav>
     <ul class="pagination justify-content-center" style="z-index: 1;">
-      {% if posicao.has_previous %}
+      {% if posicoes.has_previous %}
       <li class="page-item">
-        <a style="color: black;" class="page-link" href="?page={{ posicao.previous_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Anterior</a>
+        <a style="color: black;" class="page-link" href="?page={{ posicoes.previous_page_number }}{% if request.GET.buscar_posicoes %}&buscar_posicoes={{ request.GET.buscar_posicoes }}{% endif %}">Anterior</a>
       </li>
       {% else %}
       <li class="page-item disabled">
@@ -54,13 +54,13 @@
   
       <li class="page-item disabled">
         <span class="page-link">
-          {{ posicao.number }} de {{ posicao.paginator.num_pages }}
+          {{ posicoes.number }} de {{ posicoes.paginator.num_pages }}
         </span>
       </li>
   
-      {% if posicao.has_next %}
+      {% if posicoes.has_next %}
       <li class="page-item">
-        <a style="color: black;" class="page-link" href="?page={{ posicao.next_page_number }}{% if request.GET.buscar_produtos %}&buscar_produtos={{ request.GET.buscar_produtos }}{% endif %}">Próxima</a>
+        <a style="color: black;" class="page-link" href="?page={{ posicoes.next_page_number }}{% if request.GET.buscar_posicoes %}&buscar_posicoes={{ request.GET.buscar_posicoes }}{% endif %}">Próxima</a>
       </li>
       {% else %}
       <li class="page-item disabled">
@@ -69,7 +69,6 @@
       {% endif %}
     </ul>
   </nav>
-  
   
 
 </div>  

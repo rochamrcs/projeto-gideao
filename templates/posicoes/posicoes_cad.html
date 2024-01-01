@@ -1,0 +1,35 @@
+{% extends 'global/base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<div class="conteudo-especifico" style="z-index: 1;">
+    <div class="cabecalho">
+        <a class="btn-voltar" href="{% url 'posicoes' %}">
+            <img src="{% static 'assets/icones/btn_voltar.svg'%}" width="25px" height="25px">
+        </a>
+        <h1>Posições</h1>
+    </div>
+
+    <form class="mt-5" action="{% url 'nova_posicao' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="colum">
+            {% for field in form.visible_fields %}  
+                <div class="col-12 col-md-12">
+                    <label class="form-label texto-branco fs-7" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p class="errorlist" style="color: red;">Posição existente</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button class="btn btn-success botao centralizado mt-5" type="submit">Salvar</button>
+    </form>
+</div>
+
+
+{% endblock %}
