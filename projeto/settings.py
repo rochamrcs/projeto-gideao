@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'projeto.apps.core',
     'projeto.apps.produto',
     'projeto.apps.posicao',
+    'projeto.apps.ensaque',
 ]
 
 MIDDLEWARE = [
