@@ -47,3 +47,9 @@ EMPILHAMENTO_TIPO = [
     ('Normal', 'Normal'),
     ('Igrejinha', 'Igrejinha')
 ]
+
+ARMAZENAMENTO = [
+    ('', 'Selecione'),
+    ('PAL', 'Interna'),
+    ('AEX', 'Externa')
+]
