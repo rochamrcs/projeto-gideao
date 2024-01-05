@@ -32,4 +32,13 @@ $(document).ready(function(){
     var statusField = $('#id_status').closest('.col-12');
     statusField.hide();
 
+    var armazenadoField = $('#id_armazenado').closest('.col-12');
+    armazenadoField.hide();
+
+    var ocupacaoField = $('#id_ocupacao').closest('.col-12');
+    ocupacaoField.hide();
+
+    var disponibilidadeField = $('#id_disponibilidade').closest('.col-12');
+    disponibilidadeField.hide();
+
 });

@@ -48,3 +48,21 @@ def buscar_posicoes(request):
     page = request.GET.get('page')
     resultados = paginator.get_page(page)
     return render(request, 'posicoes/posicoes.html', {'posicoes': resultados})
+
+def detalhe_posicao(request, pk):
+    posicao = get_object_or_404(Posicao, pk=pk)
+
+    return render(request, 'posicoes/posicao_detail.html', {'detalhe_posicao': posicao})
+
+def editar_posicao(request, posicao_id):
+    posicao = Posicao.objects.get(id=posicao_id)
+
+    form = PosicaoForms(instance=posicao)
+
+    if request.method == 'POST':
+        form = PosicaoForms(request.POST, instance=posicao)
+        if form.is_valid:
+            form.save()
+            return redirect('posicoes')
+        
+    return render(request, 'posicoes/posicao_edit.html', {'form': form, 'posicao_id':posicao_id})

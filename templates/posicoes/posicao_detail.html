@@ -6,29 +6,29 @@
 
 <div class="conteudo-especifico" style="z-index: 1;">
     <div class="cabecalho">
-        <a class="btn-voltar" href="{% url 'produtos' %}">
+        <a class="btn-voltar" href="{% url 'posicoes' %}">
             <img src="{% static 'assets/icones/btn_voltar.svg'%}" width="25px" height="25px">
         </a>
         <h3 style="color: white;">Detalhes</h1>
     </div>
 
     <div>
-        <a href="{% url 'editar_produto' detalhe_produto.id %}" style="text-decoration: none;">
+        <a href="{% url 'editar_posicao' detalhe_posicao.id %}" style="text-decoration: none;">
             <button type="button" class="btn btn-light botao centralizado" style="width: 18rem;"> Editar</button>
         </a>
     </div>
 
     <div class="card border-dark" style="width: 18rem;">
         <div class="card-body">
-            <p class="card-text">Produto: {{detalhe_produto.produto}}</p>
-            <p class="card-text">Familia: {{detalhe_produto.familia}}</p>
-            <p class="card-text">É empilhavel? {{detalhe_produto.empilhamento}}</p>  
-            <p class="card-text">Tipo de empilhamento: {{detalhe_produto.empilhamento_tipo}}</p>  
+            <p class="card-text">Posição: {{detalhe_posicao.posicao}}</p>
+            <p class="card-text">Capacidade: {{detalhe_posicao.capacidade}}</p>
+            <p class="card-text">Armazenado: {{detalhe_posicao.armazenado}}</p>  
+            <p class="card-text">Ocupação: {{detalhe_posicao.ocupacao}}</p>  
             <p class="card-text">Status: 
-                {% if detalhe_produto.status == 'Ativo' %}
-                    <strong style="color: green;">{{detalhe_produto.status}}</strong>
+                {% if detalhe_posicao.status == 'Ativo' %}
+                    <strong style="color: green;">{{detalhe_posicao.status}}</strong>
                 {% else %}
-                    <strong style="color: brown;">{{detalhe_produto.status}}</strong>
+                    <strong style="color: brown;">{{detalhe_posicao.status}}</strong>
                 {% endif %}
             </p>
         </div>   

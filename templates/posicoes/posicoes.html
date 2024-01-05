@@ -25,19 +25,22 @@
       <tr>
         <th scope="col">Posição</th>
         <th scope="col">Capacidade</th>
-        <th scope="col">Ocupação</th>
+        <th scope="col">Taxa(%)</th>
+        <th scope="col">Armazenado</th>
       </tr>
     </thead>
     <tbody class="text-center">
       {% for posicao in posicoes %}
       <tr>
-        <td><a href="">{{ posicao.posicao }}</a></td>
+        <td><a href="{% url 'detalhe_posicao' posicao.pk %}">{{ posicao.posicao }}</a></td>
         <td>{{ posicao.capacidade }}</td>
         <td>{{ posicao.ocupacao }}</td>
+        <td>{{ posicao.armazenado }}</td>
       </tr>
       {% endfor %}
     </tbody>
-  </table>
+</table>
+
   <p class="total">Total de posições: {{ posicoes.paginator.count }}</p>
 
   <nav>
